@@ -55,6 +55,7 @@ alias du='du -h'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias path='echo $PATH | tr ":" "\n"'
+alias clear="printf '\033[H\033[2J'"
 
 # === Aliases: Git ===
 alias gs='git status'
