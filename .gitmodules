@@ -1,0 +1,6 @@
+[submodule "vim/pack/themes/start/catppuccin"]
+	path = vim/pack/themes/start/catppuccin
+	url = https://github.com/catppuccin/vim.git
+[submodule "zsh/catppuccin-zsh-syntax-highlighting"]
+	path = zsh/catppuccin-zsh-syntax-highlighting
+	url = https://github.com/catppuccin/zsh-syntax-highlighting.git

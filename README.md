@@ -5,17 +5,25 @@ Personal configuration files for vim, zsh, ghostty, and herdr.
 ## What's Included
 
 - **vimrc** - Vim config with sensible defaults, custom keybindings, and Catppuccin Mocha theme
+- **vim/pack/themes** - Catppuccin vim colorscheme (git submodule)
 - **zshrc** - Zsh config with Oh My Zsh, aliases, utility functions, and history settings
+- **zsh/** - Catppuccin zsh-syntax-highlighting theme (git submodule)
+- **zprofile** - Homebrew shell environment setup
+- **git/ignore** - Global gitignore
 - **ghostty/config** - Ghostty terminal config with Catppuccin Mocha theme and JetBrainsMono Nerd Font
 - **herdr/config.toml** - Herdr agent multiplexer config (onboarding off, agent panel sorted by spaces)
 
 ## Install
 
 ```bash
-git clone git@github.com:rycummins/dotfiles.git ~/.dotfiles
+git clone --recurse-submodules git@github.com:rycummins/dotfiles.git ~/.dotfiles
 
 ln -s ~/.dotfiles/vimrc ~/.vimrc
+mkdir -p ~/.vim && ln -s ~/.dotfiles/vim/pack ~/.vim/pack
 ln -s ~/.dotfiles/zshrc ~/.zshrc
+ln -s ~/.dotfiles/zsh ~/.zsh
+ln -s ~/.dotfiles/zprofile ~/.zprofile
+mkdir -p ~/.config/git && ln -s ~/.dotfiles/git/ignore ~/.config/git/ignore
 ln -s ~/.dotfiles/ghostty/config ~/.config/ghostty/config
 mkdir -p ~/.config/herdr && ln -s ~/.dotfiles/herdr/config.toml ~/.config/herdr/config.toml
 ```
@@ -25,6 +33,10 @@ Herdr's agent hook scripts are managed by herdr itself and are not tracked here.
 ```bash
 herdr integration install claude
 ```
+
+If the repo was cloned without `--recurse-submodules`, run `git submodule update --init` to fetch the themes.
+
+Zsh also expects `zsh-autosuggestions` and `zsh-syntax-highlighting` from Homebrew, plus Oh My Zsh.
 
 ## Local Overrides
 
