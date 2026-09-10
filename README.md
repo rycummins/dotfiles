@@ -12,11 +12,14 @@ Personal configuration files for vim, zsh, ghostty, and herdr.
 - **git/ignore** - Global gitignore
 - **ghostty/config** - Ghostty terminal config with Catppuccin Mocha theme and JetBrainsMono Nerd Font
 - **herdr/config.toml** - Herdr agent multiplexer config (onboarding off, agent panel sorted by spaces)
+- **Brewfile** - Homebrew formulae and casks this setup expects
 
 ## Install
 
 ```bash
 git clone --recurse-submodules git@github.com:rycummins/dotfiles.git ~/.dotfiles
+
+brew bundle --file=~/.dotfiles/Brewfile
 
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 mkdir -p ~/.vim && ln -s ~/.dotfiles/vim/pack ~/.vim/pack
@@ -36,7 +39,7 @@ herdr integration install claude
 
 If the repo was cloned without `--recurse-submodules`, run `git submodule update --init` to fetch the themes.
 
-Zsh also expects `zsh-autosuggestions` and `zsh-syntax-highlighting` from Homebrew, plus Oh My Zsh.
+`brew bundle` above covers `zsh-autosuggestions` and `zsh-syntax-highlighting`. Oh My Zsh still needs a separate install (`sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`, keep the existing `.zshrc`).
 
 ## Local Overrides
 
